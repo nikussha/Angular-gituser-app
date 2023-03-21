@@ -1,0 +1,72 @@
+<div
+  [ngClass]="{
+    'content-div': true,
+    lightmode: serv.lighttheme,
+    darkmode: !serv.lighttheme
+  }"
+>
+  <ng-container *ngIf="data | async as user">
+    <div class="img-div">
+      <div id="img">
+        <img [src]="user.avatar_url" />
+      </div>
+    </div>
+    <div class="div-info">
+      <div class="flex-1">
+        <div class="name">
+          <h2
+            style="font-size: 30px; letter-spacing: 2px"
+            [ngStyle]="{ color: serv.lighttheme ? 'black' : 'white' }"
+          >
+            {{ user.login }}
+          </h2>
+          <p style="color: rgba(0, 121, 255, 1)">{{ user.name }}</p>
+        </div>
+        <div class="date">
+          <h3>{{ user.created_at }}</h3>
+        </div>
+      </div>
+      <div id="user-bio">
+        <p>{{ user.bio ? user.bio : "This profile has no bio" }}</p>
+      </div>
+      <div
+        [ngClass]="{
+          information: true,
+          light: serv.lighttheme,
+          dark: !serv.lighttheme
+        }"
+      >
+        <div class="repos">
+          <p>Repos</p>
+          <p style="font-size: 20px">{{ user.public_repos }}</p>
+        </div>
+        <div class="followers">
+          <p>Following</p>
+          <p style="font-size: 20px">{{ user.following }}</p>
+        </div>
+        <div class="following">
+          <p>Followers</p>
+          <p style="font-size: 20px">{{ user.followers }}</p>
+        </div>
+      </div>
+      <div class="user-activity">
+        <div class="location">
+          <mat-icon>location_on</mat-icon>
+          <p>Location</p>
+        </div>
+        <div class="twitter">
+          <mat-icon>people</mat-icon>
+          <p>Twitter</p>
+        </div>
+        <div class="github">
+          <mat-icon>person</mat-icon>
+          <p>Github</p>
+        </div>
+        <div class="github2">
+          <mat-icon>person_outline</mat-icon>
+          <p>@github</p>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

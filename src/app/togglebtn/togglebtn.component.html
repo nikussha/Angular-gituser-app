@@ -1,0 +1,15 @@
+<div class="toggle">
+  <h2 [ngStyle]="{ color: serv.lighttheme ? 'black' : 'white' }">Devfinder</h2>
+  <div class="toggle-btn">
+    <span [ngStyle]="{ color: serv.lighttheme ? 'black' : 'white' }">{{
+      serv.lighttheme ? "Dark" : "Light"
+    }}</span>
+    <button
+      [ngStyle]="{ color: serv.lighttheme ? 'black' : 'white' }"
+      mat-icon-button
+      (click)="serv.toggletheme()"
+    >
+      <mat-icon> {{ serv.lighttheme ? "dark_mode" : "light_mode" }}</mat-icon>
+    </button>
+  </div>
+</div>

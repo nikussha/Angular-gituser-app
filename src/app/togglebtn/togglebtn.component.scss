@@ -1,0 +1,18 @@
+.toggle{
+    width: 45vw;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    margin-top: 100px !important;
+    span{
+        margin-right: 25px;
+    }
+    
+}
+
+@media(max-width:520px){
+    .toggle{
+        width: 100%;
+    }
+}

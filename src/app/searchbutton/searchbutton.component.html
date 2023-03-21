@@ -1,0 +1,13 @@
+<div class="search-comp">
+  <mat-icon>search</mat-icon>
+  <form (submit)="sendrequest($event)">
+    <input
+      [ngClass]="{ light: theme.lighttheme, dark: !theme.lighttheme }"
+      type="text"
+      placeholder="Search Github Username..."
+      [formControl]="user"
+    />
+    <button type="submit">Search</button>
+  </form>
+  <p id="err" style="color: blue" *ngIf="errormsg">{{ errormsg }}</p>
+</div>
